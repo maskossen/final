@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Data Structures and Sorting Complexities</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card (click)="toggleStruct()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Data Structures</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item *ngFor="let item of dataStructList" color="secondary">
+        <ion-label>
+          <h1 style="text-align: center" (click)="showStructure(item)">{{item.structure}}</h1>
+          <!-- <br> -->
+          <div *ngIf="!item.shown">
+            <h2>Average Time Complexity</h2>
+            <h3>Access: <code>{{item.a_access}}</code></h3>
+            <h3>Search: <code>{{item.a_search}}</code></h3>
+            <h3>Insertion: <code>{{item.a_insertion}}</code></h3>
+            <h3>Deletion: <code>{{item.a_deletion}}</code></h3>
+
+            <h2>Worst Time Complexity</h2>
+            <h3>Access: <code>{{item.w_access}}</code></h3>
+            <h3>Search: <code>{{item.w_search}}</code></h3>
+            <h3>Insertion: <code>{{item.w_insertion}}</code></h3>
+            <h3>Deletion: <code>{{item.w_deletion}}</code></h3>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toggleAlgo()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Sorting Algorithms</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item *ngFor="let item of algoList" color="secondary">
+        <ion-label>
+          <h1 (click)="showAlgo(item)">{{item.algo}}</h1>
+
+          <div *ngIf="!item.shown">
+            <h2>Time Complexity</h2>
+            <h3>Best: <code>{{item.best}}</code></h3>
+            <h3>Average: <code>{{item.average}}</code></h3>
+            <h3>Worst: <code>{{item.worst}}</code></h3>
+
+            <h2>Space Complexity</h2>
+            <h3>Worst: <code>{{item.s_worst}}</code></h3>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

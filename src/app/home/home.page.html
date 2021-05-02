@@ -1,20 +1,95 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Cheat Sheat
     </ion-title>
+
+    
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+
+      <ion-buttons slot="secondary">
+        <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-title size="large" slot="primary">Home</ion-title>
+
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+
+        <ion-card (click)="goToRegEx()">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/OOjs_UI_icon_regular-expression.svg/1024px-OOjs_UI_icon_regular-expression.svg.png">
+            </ion-thumbnail>
+            <ion-label><h1><b>RegEx</b></h1></ion-label>
+          </ion-item>
+
+          <ion-card-content>
+            Quick references to basic regex expressions.
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card (click)="goToCpp()">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMTUwIiBoZWlnaHQ9IjE1MCIKdmlld0JveD0iMCAwIDE3MiAxNzIiCnN0eWxlPSIgZmlsbDojMDAwMDAwOyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTcydi0xNzJoMTcydjE3MnoiIGZpbGw9Im5vbmUiPjwvcGF0aD48ZyBmaWxsPSIjZDY2ODUzIj48cGF0aCBkPSJNMTUxLjA1MDk0LDQxLjI5MzQ0bC01Ny45MjkwNiwtMzIuNTU5MDZjLTQuMzk0MDYsLTIuNDU5MDYgLTkuODQ5NjksLTIuNDU5MDYgLTE0LjI0Mzc1LDBsLTU3LjkyOTA2LDMyLjU1OTA2Yy00LjQzNDM4LDIuNDg1OTQgLTcuMTg5MDYsNy4xNDg3NSAtNy4xODkwNiwxMi4xNDc1djY1LjExODEzYzAsNC45OTg3NSAyLjc1NDY5LDkuNjYxNTYgNy4xODkwNiwxMi4xNDc1bDU3LjkyOTA2LDMyLjU1OTA2YzIuMjAzNzUsMS4yMzYyNSA0LjY2MjgxLDEuODU0MzcgNy4xMjE4NywxLjg1NDM3YzIuNDU5MDYsMCA0LjkxODEzLC0wLjYxODEyIDcuMTIxODgsLTEuODU0MzdsNTcuOTI5MDYsLTMyLjU1OTA2YzQuNDM0MzgsLTIuNDg1OTQgNy4xODkwNiwtNy4xNDg3NSA3LjE4OTA2LC0xMi4xNDc1di02NS4xMTgxM2MwLC00Ljk5ODc1IC0yLjc1NDY5LC05LjY2MTU2IC03LjE4OTA2LC0xMi4xNDc1ek04NiwxMjcuMjhjLTIyLjc2MzEyLDAgLTQxLjI4LC0xOC41MTY4NyAtNDEuMjgsLTQxLjI4YzAsLTIyLjc2MzEyIDE4LjUxNjg4LC00MS4yOCA0MS4yOCwtNDEuMjhjMTMuMDA3NSwwIDI1LjAyMDYzLDYuMDMzNDQgMzIuODI3ODEsMTYuMzEzMTNsLTE1LjA3Njg4LDguNzIwOTRjLTQuNTI4NDQsLTQuOTU4NDQgLTEwLjk2NSwtNy44MzQwNiAtMTcuNzUwOTQsLTcuODM0MDZjLTEzLjI3NjI1LDAgLTI0LjA4LDEwLjgwMzc1IC0yNC4wOCwyNC4wOGMwLDEzLjI3NjI1IDEwLjgwMzc1LDI0LjA4IDI0LjA4LDI0LjA4YzYuNzg1OTQsMCAxMy4yMjI1LC0yLjg3NTYyIDE3Ljc1MDk0LC03LjgzNDA2bDE1LjA3Njg4LDguNzIwOTRjLTcuODA3MTksMTAuMjc5NjkgLTE5LjgyMDMxLDE2LjMxMzEyIC0zMi44Mjc4MSwxNi4zMTMxMnpNMTI3LjI4LDg5LjQ0aC02Ljg4djYuODhoLTYuODh2LTYuODhoLTYuODh2LTYuODhoNi44OHYtNi44OGg2Ljg4djYuODhoNi44OHpNMTUxLjM2LDg5LjQ0aC02Ljg4djYuODhoLTYuODh2LTYuODhoLTYuODh2LTYuODhoNi44OHYtNi44OGg2Ljg4djYuODhoNi44OHoiPjwvcGF0aD48L2c+PC9nPjwvc3ZnPg=="/>
+            </ion-thumbnail>
+            <ion-label><h1><b>C++</b></h1></ion-label>
+          </ion-item>
+
+          <ion-card-content>
+            C++
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card (click)="goToPython()">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIKdmlld0JveD0iMCAwIDE3MiAxNzIiCnN0eWxlPSIgZmlsbDojMDAwMDAwOyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWxpbmVjYXA9ImJ1dHQiIHN0cm9rZS1saW5lam9pbj0ibWl0ZXIiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgc3Ryb2tlLWRhc2hhcnJheT0iIiBzdHJva2UtZGFzaG9mZnNldD0iMCIgZm9udC1mYW1pbHk9Im5vbmUiIGZvbnQtd2VpZ2h0PSJub25lIiBmb250LXNpemU9Im5vbmUiIHRleHQtYW5jaG9yPSJub25lIiBzdHlsZT0ibWl4LWJsZW5kLW1vZGU6IG5vcm1hbCI+PHBhdGggZD0iTTAsMTcydi0xNzJoMTcydjE3MnoiIGZpbGw9Im5vbmUiPjwvcGF0aD48ZyBmaWxsPSIjZDY2ODUzIj48cGF0aCBkPSJNODQuMjgsNi44OGMtMjkuOTI1MzEsMCAtMzYuMTIsMTUuNDUzMTMgLTM2LjEyLDI0LjQwMjV2MTYuODc3NWgzNC40djMuNDRoLTUxLjI3NzVjLTExLjM1NDY5LDAgLTI0LjQwMjUsOC45NDkzOCAtMjQuNDAyNSwzNC40YzAsMjUuNDUwNjMgMTMuMDQ3ODEsMzQuNCAyNC40MDI1LDM0LjRoMjAuMzE3NXYtMjAuNjRjMCwtNy41NjUzMSA2LjE5NDY5LC0xMy43NiAxMy43NiwtMTMuNzZoNDEuMjhjNS44NDUzMSwwIDEwLjMyLC00LjQ3NDY5IDEwLjMyLC0xMC4zMnYtNDQuMzk3NWMwLC0xMi4wNCAtMTEuMzU0NjksLTI0LjQwMjUgLTMyLjY4LC0yNC40MDI1ek02OC44LDI0LjA4YzMuNzg5MzgsMCA2Ljg4LDMuMDkwNjMgNi44OCw2Ljg4YzAsMy43ODkzOCAtMy4wOTA2Miw2Ljg4IC02Ljg4LDYuODhjLTMuNzg5MzcsMCAtNi44OCwtMy4wOTA2MiAtNi44OCwtNi44OGMwLC0zLjc4OTM3IDMuMDkwNjMsLTYuODggNi44OCwtNi44OHpNMTIwLjQsNTEuNnYyNC4wOGMwLDcuNTY1MzEgLTYuMTk0NjksMTMuNzYgLTEzLjc2LDEzLjc2aC00MS4yOGMtNS44NDUzMSwwIC0xMC4zMiw0LjQ3NDY5IC0xMC4zMiwxMC4zMnY0MC45NTc1YzAsMTIuMDQgMTEuMzU0NjksMjQuNDAyNSAzMi42OCwyNC40MDI1YzI5LjkyNTMxLDAgMzYuMTIsLTE1LjQ1MzEyIDM2LjEyLC0yNC40MDI1di0xNi44Nzc1aC0zNC40di0zLjQ0aDUxLjI3NzVjMTEuMzU0NjksMCAyNC40MDI1LC04Ljk0OTM3IDI0LjQwMjUsLTM0LjRjMCwtMjUuNDUwNjIgLTEzLjA0NzgxLC0zNC40IC0yNC40MDI1LC0zNC40ek0xMDMuMiwxMzQuMTZjMy43ODkzOCwwIDYuODgsMy4wOTA2MyA2Ljg4LDYuODhjMCwzLjc4OTM4IC0zLjA5MDYyLDYuODggLTYuODgsNi44OGMtMy43ODkzNywwIC02Ljg4LC0zLjA5MDYyIC02Ljg4LC02Ljg4YzAsLTMuNzg5MzcgMy4wOTA2MywtNi44OCA2Ljg4LC02Ljg4eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"/>
+            </ion-thumbnail>
+            <ion-label><h1><b>Python</b></h1></ion-label>
+          </ion-item>
+
+          <ion-card-content>
+            Python
+          </ion-card-content>
+        </ion-card>
+
+        <!-- <ion-card>
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iMjQiIGhlaWdodD0iMjQiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSJub25lIj48L3BhdGg+PGcgZmlsbD0iI2Q2Njg1MyI+PHBhdGggZD0iTTE3LjIsMTMuNzZjLTEuODk5NzgsMC4wMDAxOSAtMy40Mzk4MSwxLjU0MDIyIC0zLjQ0LDMuNDR2MTM3LjZjMC4wMDAxOSwxLjg5OTc4IDEuNTQwMjIsMy40Mzk4MSAzLjQ0LDMuNDRoMTM3LjZjMS44OTk3OCwtMC4wMDAxOSAzLjQzOTgxLC0xLjU0MDIyIDMuNDQsLTMuNDR2LTEzNy42Yy0wLjAwMDE5LC0xLjg5OTc4IC0xLjU0MDIyLC0zLjQzOTgxIC0zLjQ0LC0zLjQ0ek0yMC42NCwyMC42NGgxMzAuNzJ2MTMwLjcyaC0xMzAuNzJ6TTUxLjYsNzkuMTJ2MTEuODUxODdoMTcuMnY1My41MDgxM2gxMy43NnYtNTMuNTA4MTNoMTcuMnYtMTEuODUxODd6TTEyNi4yMTg0NCw3OS4xNTM2Yy0xMC43MTQzMSwtMC4wNDI2NSAtMjIuOTU3OTcsMy4yMDQyIC0yMi45NTc5NywxOC4yODE3MmMwLDE5LjcxMTIgMjYuNTU5MjIsMTkuNzE2MDQgMjYuNTU5MjIsMjguNjA4NDRjMCwwLjg0MjggMC4zNTc0NCw2Ljk2NzM1IC05LjAxNjU2LDYuOTY3MzVjLTkuMzc0LDAgLTE3LjE4NjU2LC01Ljg5MjM1IC0xNy4xODY1NiwtNS44OTIzNXYxNC4zMDQyMmMwLDAgNDAuODcwMTUsMTMuMjE5IDQwLjg3MDE1LC0xNi41ODg2Yy0wLjAwMzQ0LC0xOS4zNSAtMjYuODA3ODEsLTE4LjM4MjIzIC0yNi44MDc4MSwtMjcuOTk3MDNjMCwtMy43MjU1MiAyLjY0NjcxLC03LjIwOTIyIDkuOTc3MzUsLTcuMjA5MjJjNy4zMzA2NCwwIDEzLjgyMDQ3LDQuMzI2ODcgMTMuODIwNDcsNC4zMjY4N2wwLjQ4Mzc1LC0xMi43NDU0N2MwLDAgLTcuNDA4NjgsLTIuMDIyNzcgLTE1Ljc0MjAzLC0yLjA1NTk0eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+"/>
+            </ion-thumbnail>
+            <ion-label><h1><b>TypeScript</b></h1></ion-label>
+          </ion-item>
+
+          <ion-card-content>
+            TypeScript
+          </ion-card-content>
+        </ion-card> -->
+
+        <ion-card (click)="goToComplexities()">
+          <ion-item lines="none">
+            <ion-thumbnail slot="start">
+              <img src="data:image/png;base64,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">
+            </ion-thumbnail>
+            <ion-label><h1>Data Structures and Array Sorting Complexities</h1></ion-label>
+          </ion-item>
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  
 </ion-content>

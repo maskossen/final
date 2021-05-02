@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'regex',
+    loadChildren: () => import('./sheets/regex/regex.module').then( m => m.RegexPageModule)
+  },
+  {
+    path: 'cpp',
+    loadChildren: () => import('./sheets/cpp/cpp.module').then( m => m.CppPageModule)
+  },
+  {
+    path: 'python',
+    loadChildren: () => import('./sheets/python/python.module').then( m => m.PythonPageModule)
+  },
+  {
+    path: 'complexities',
+    loadChildren: () => import('./sheets/complexities/complexities.module').then( m => m.ComplexitiesPageModule)
+  },
 ];
 
 @NgModule({

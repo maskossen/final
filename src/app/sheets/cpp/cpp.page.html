@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>C++</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card (click)="toggleCdt()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Common Data Types</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="cdtShown">
+      <ion-item *ngFor="let item of cdtList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toggleHfci()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Header Files and Useful Includes</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="hfciShown">
+      <ion-item *ngFor="let item of hfciList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toggleOp()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Operators</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="opShown">
+      <ion-item *ngFor="let item of opList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="togglePoint()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Pointers and References</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="pointShown">
+      <ion-item *ngFor="let item of pointerList" color="secondar">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

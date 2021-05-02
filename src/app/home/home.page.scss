@@ -25,3 +25,16 @@
 #container a {
   text-decoration: none;
 }
+
+ion-grid {
+  height: 100%;
+  justify-content: center;
+}
+
+h1 {
+  text-align: left;
+  font-weight: bold;
+  padding-top: 0.5em;
+  overflow: initial;
+  white-space: initial;
+}

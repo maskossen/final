@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Python</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card (click)="toggleStrings()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Strings</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="stringsShown">
+      <ion-item *ngFor="let item of stringsList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toggleArray()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>Lists</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="arrayShown">
+      <ion-item *ngFor="let item of arrayList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card (click)="toggleInput()" color="secondary">
+    <ion-card-header>
+      <ion-card-title>User Input</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="inputShown">
+      <ion-item *ngFor="let item of inputList" color="secondary">
+        <ion-label>
+          <code>{{item.codeSnip}}</code>
+          <h2>{{item.desc}}</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
