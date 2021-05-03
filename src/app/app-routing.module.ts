@@ -27,6 +27,14 @@ const routes: Routes = [
     path: 'complexities',
     loadChildren: () => import('./sheets/complexities/complexities.module').then( m => m.ComplexitiesPageModule)
   },
+  {
+    path: 'signup',
+    loadChildren: () => import('./user/signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./user/login/login.module').then( m => m.LoginPageModule)
+  },
 ];
 
 @NgModule({

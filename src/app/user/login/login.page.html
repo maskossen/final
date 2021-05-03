@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input type="email" [(ngModel)]="user.email" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Password:</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password" required></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" type="submit" (click)="emailLogin(user.email, user.password)">
+    Login
+  </ion-button>
+  <ion-button expand="block" (click)="signup()">
+    Go to Signup
+  </ion-button>
+  <!-- <ion-button expand="block" (click)="googleLogin()">
+    <ion-icon name="logo-google"></ion-icon>
+  </ion-button> -->
+
+
+</ion-content>

@@ -13,8 +13,15 @@
   <ion-header collapse="condense">
     <ion-toolbar>
 
-      <ion-buttons slot="secondary">
+      <ion-buttons slot="secondary" *ngIf="loggedIn">
         <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+
+      <ion-buttons slot="secondary" *ngIf="!loggedIn">
+        <ion-button (click)="logIn()">
+          <ion-icon name="add-circle"></ion-icon>
+          Login
+        </ion-button>
       </ion-buttons>
 
       <ion-title size="large" slot="primary">Home</ion-title>
