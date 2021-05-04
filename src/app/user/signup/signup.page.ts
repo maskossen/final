@@ -31,7 +31,9 @@ export class SignupPage implements OnInit {
           uid: user.user.uid,
           email: this.user.email,
           password: this.user.pass,
-          username: this.user.username
+          username: this.user.username,
+          postIDs: [],
+          friends: []
         }).then(docRef => {
           console.log('Usertype written with ID: ', docRef.id);
         }).catch(error => {

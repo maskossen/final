@@ -85,13 +85,13 @@
     </div>
   </ion-item-group> -->
 
-  <ion-card (click)="toggleAnchor()" color="secondary">
+  <ion-card (click)="toggleAnchor()" color="medium">
     <ion-card-header>
       <ion-card-title>Anchors</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="anchorShown">
-      <ion-item *ngFor="let item of anchorList"  color="secondary">
+      <ion-item *ngFor="let item of anchorList"  color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>

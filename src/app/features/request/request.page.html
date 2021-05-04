@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Create Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <form [formGroup]="new_request_form" (submit)="addNewRequest(new_request_form.value)">
+
+    <ion-item>
+      <ion-label position="floating">Title</ion-label>
+      <ion-input type="text" formControlName="title" required></ion-input>
+    </ion-item>
+
+    <ion-label position="stacked" class="textAreaLabel">Request Description</ion-label>
+    <ion-textarea rows="2" placeholder="What would you like to see next?" class="textArea1" type="text"
+                  formControlName="rDescription" required></ion-textarea>  
+
+  </form> -->
+
+  <!-- <ion-button expand="block" (click)="addNewRequest()" type="submit" [disabled]="!new_request_form.valid">Send Request</ion-button> -->
+    
+    <form (ngSubmit)="onSubmit()">
+
+        <ion-item>
+          <ion-label>Title</ion-label>
+          <ion-input type="text" required [(ngModel)]="requestMessage.title" name="title"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="stacked" class="textAreaLabel">Description</ion-label>
+          <ion-textarea autoGrow="true" rows="2" placeholder="Enter your comments, concerns, and requests here" 
+          [(ngModel)]="requestMessage.description" name="description"></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" class="btn">Submit</ion-button>
+
+    </form>
+
+<!-- 
+    <div class="input-field col s6">
+      <input type="text" placeholder="Add Title" [(ngModel)]="requestMessage.title" name="title">
+      <lable>Title</lable>
+    </div>
+
+    <div class="input-field col s6">
+      <input type="text" placeholder="Add Description" [(ngModel)]="requestMessage.description" name="description">
+      <lable>Description</lable>
+    </div> -->
+
+    <!-- <input type="submit" value="submit" class="btn"> -->
+</ion-content>
