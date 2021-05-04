@@ -4,3 +4,10 @@ export interface RequestMessage {
     title: string;
     email: string;
 }
+
+export interface Note {
+    uid?: string;
+    username: string;
+    title: string;
+    content: string;
+}

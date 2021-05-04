@@ -23,7 +23,7 @@
         </ion-menu-toggle>
 
         <ion-menu-toggle>
-          <ion-item>
+          <ion-item routerLink="/notes">
             <ion-icon name="document-outline" slot="start"></ion-icon>
             <ion-label>Notes</ion-label>
           </ion-item>
@@ -37,7 +37,7 @@
         </ion-menu-toggle>
 
         <ion-menu-toggle>
-          <ion-item>
+          <ion-item (click)="logout()">
             <ion-icon name="person-remove-outline" slot="start"></ion-icon>
             <ion-label>Logout</ion-label>
           </ion-item>

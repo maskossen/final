@@ -34,4 +34,13 @@ export class AppComponent {
   login() {
     this.router.navigate(['/login']);
   }
+
+  logout() {
+    this.angularFire.signOut().then(() => {
+      var usr = this.angularFire.currentUser;
+      console.log('Current user (logout invoked): ', usr);
+      this.fbService.setUID('');
+      this.router.navigate(['/login'])
+    });
+  }
 }

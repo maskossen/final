@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Note</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="onSubmit()">
+
+    <ion-item>
+      <ion-label>Note Title:</ion-label>
+      <ion-input type="text" required [(ngModel)]="newNote.title" name="title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked" class="textAreaLabel">Note Content:</ion-label>
+      <ion-textarea autoGrow="true" rows="2" [(ngModel)]="newNote.content" name="content"></ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" class="btn">Create Note</ion-button>
+
+  </form>
+
+</ion-content>

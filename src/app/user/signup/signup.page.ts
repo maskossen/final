@@ -13,7 +13,7 @@ import firebase from 'firebase/app';
 })
 export class SignupPage implements OnInit {
 
-  user = {email: '', pass: '', username: ''};
+  user = {email: '', pass: '', username: '', photoURL: ''};
 
   constructor(private router: Router,
               private afAuth: AngularFireAuth,
@@ -25,6 +25,10 @@ export class SignupPage implements OnInit {
 
   emailSignup(email: string, password: string, userName: string) {
 
+    if (this.user.photoURL === '') {
+      this.user.photoURL = '../../assets/default-profile.png';
+    }
+
     this.afAuth.createUserWithEmailAndPassword(email, password).then(user => {
       const db = firebase.firestore();
       db.collection('users').add({
@@ -32,7 +36,8 @@ export class SignupPage implements OnInit {
           email: this.user.email,
           password: this.user.pass,
           username: this.user.username,
-          postIDs: [],
+          photoURL: this.user.photoURL,
+          notes: [],
           friends: []
         }).then(docRef => {
           console.log('Usertype written with ID: ', docRef.id);

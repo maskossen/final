@@ -43,6 +43,14 @@ const routes: Routes = [
     path: 'request',
     loadChildren: () => import('./features/request/request.module').then( m => m.RequestPageModule)
   },
+  {
+    path: 'notes',
+    loadChildren: () => import('./features/notes/notes.module').then( m => m.NotesPageModule)
+  },
+  {
+    path: 'add-note',
+    loadChildren: () => import('./features/add-note/add-note.module').then( m => m.AddNotePageModule)
+  },
 ];
 
 @NgModule({

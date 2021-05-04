@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
   emailLogin(email: string, password: string) {
     this.afAuth.signInWithEmailAndPassword(email, password).then(user => {
       //TODO add loading stuff here
+      this.fbService.loadNotes();
 
       var aUser = firebase.auth().currentUser;
       this.fbService.setUID(user.user.uid);
