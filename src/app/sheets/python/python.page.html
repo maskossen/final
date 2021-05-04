@@ -9,13 +9,13 @@
 
 <ion-content>
 
-  <ion-card (click)="toggleStrings()" color="secondary">
+  <ion-card (click)="toggleStrings()" color="medium">
     <ion-card-header>
       <ion-card-title>Strings</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="stringsShown">
-      <ion-item *ngFor="let item of stringsList" color="secondary">
+      <ion-item *ngFor="let item of stringsList" color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>
@@ -24,13 +24,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="toggleArray()" color="secondary">
+  <ion-card (click)="toggleArray()" color="medium">
     <ion-card-header>
       <ion-card-title>Lists</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="arrayShown">
-      <ion-item *ngFor="let item of arrayList" color="secondary">
+      <ion-item *ngFor="let item of arrayList" color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>
@@ -39,13 +39,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="toggleInput()" color="secondary">
+  <ion-card (click)="toggleInput()" color="medium">
     <ion-card-header>
       <ion-card-title>User Input</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="inputShown">
-      <ion-item *ngFor="let item of inputList" color="secondary">
+      <ion-item *ngFor="let item of inputList" color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>

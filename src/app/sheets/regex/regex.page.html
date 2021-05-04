@@ -100,13 +100,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="toggleLitChar()" color="secondary">
+  <ion-card (click)="toggleLitChar()" color="medium">
     <ion-card-header>
       <ion-card-title>Literal Characters</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="litCharShown">
-      <ion-item *ngFor="let item of literalCharactersList"  color="secondary">
+      <ion-item *ngFor="let item of literalCharactersList"  color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>
@@ -115,13 +115,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="toggleCharGroups()" color="secondary">
+  <ion-card (click)="toggleCharGroups()" color="medium">
     <ion-card-header>
       <ion-card-title>Character Groups</ion-card-title>
     </ion-card-header>
 
     <ion-card-content *ngIf="charGroupsShown">
-      <ion-item *ngFor="let item of charGroups"  color="secondary">
+      <ion-item *ngFor="let item of charGroups"  color="medium">
         <ion-label>
           <code>{{item.codeSnip}}</code>
           <h2>{{item.desc}}</h2>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable, observable} from 'rxjs';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
-import { RequestMessage, Note } from '../modal/interfaces';
+import { RequestMessage, Note, User } from '../modal/interfaces';
 import { map, take } from 'rxjs/operators';
 import firebase from 'firebase/app';
 import 'firebase/storage';
@@ -19,8 +19,22 @@ export class FirebaseService {
   notesCollection: AngularFirestoreCollection<Note>
   notesDoc: AngularFirestoreDocument<Note>
 
+  users: Observable<User[]>
+  usersCollection: AngularFirestoreCollection<User>
+  usersDoc: AngularFirestoreDocument<User>
+
   constructor(private afs: AngularFirestore) { 
     this.requestCollection = this.afs.collection('requests');
+
+    this.usersCollection = this.afs.collection('users');
+    this.users = this.usersCollection.snapshotChanges().pipe(map(changes => {
+      return changes.map(a => {
+        const data = a.payload.doc.data() as User;
+        const id = a.payload.doc.id;
+        console.log(data, id);
+        return {id, ...data};
+      });
+    }));
   }
 
   setUID(userID) {
@@ -57,4 +71,17 @@ export class FirebaseService {
   createNote(note: Note): Promise<DocumentReference> {
     return this.notesCollection.add(note);
   }
+
+  getUsers(): Observable<User[]> {
+    return this.users;
+  }
+
+  getUser(id: string): Observable<User> {
+    return this.usersCollection.doc<User>(id).valueChanges().pipe(take(1),
+      map(user => {
+        user.uid = id;
+        return user;
+      }))
+  }
+
 }

@@ -9,13 +9,13 @@
 
 <ion-content>
 
-  <ion-card (click)="toggleStruct()" color="secondary">
+  <ion-card (click)="toggleStruct()" color="medium">
     <ion-card-header>
       <ion-card-title>Data Structures</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item *ngFor="let item of dataStructList" color="secondary">
+      <ion-item *ngFor="let item of dataStructList" color="medium">
         <ion-label>
           <h1 style="text-align: center" (click)="showStructure(item)">{{item.structure}}</h1>
           <!-- <br> -->
@@ -37,13 +37,13 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card (click)="toggleAlgo()" color="secondary">
+  <ion-card (click)="toggleAlgo()" color="medium">
     <ion-card-header>
       <ion-card-title>Sorting Algorithms</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-item *ngFor="let item of algoList" color="secondary">
+      <ion-item *ngFor="let item of algoList" color="medium">
         <ion-label>
           <h1 (click)="showAlgo(item)">{{item.algo}}</h1>
 

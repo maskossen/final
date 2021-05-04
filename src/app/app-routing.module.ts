@@ -51,6 +51,14 @@ const routes: Routes = [
     path: 'add-note',
     loadChildren: () => import('./features/add-note/add-note.module').then( m => m.AddNotePageModule)
   },
+  {
+    path: 'user-search',
+    loadChildren: () => import('./features/user-search/user-search.module').then( m => m.UserSearchPageModule)
+  },
+  {
+    path: 'view-users-notes',
+    loadChildren: () => import('./features/view-users-notes/view-users-notes.module').then( m => m.ViewUsersNotesPageModule)
+  },
 ];
 
 @NgModule({

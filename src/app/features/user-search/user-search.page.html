@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Search for User</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar (ionInput)="filterList($event)"></ion-searchbar>
+
+  <!-- <ion-card *ngFor="let user of userList" color="medium">
+    <ion-card-header>
+      <ion-card-title>{{user.username}}</ion-card-title>
+      <ion-card-subtitle>{{user.email}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card> -->
+
+  <ion-card *ngFor="let user of userList" color="medium" (click)="goToUser(user)">
+    <ion-item lines="none" color="medium">
+      <ion-avatar slot="start">
+        <img [src]="user.photoURL">
+      </ion-avatar>
+      <ion-label>
+        <h1>{{user.username}}</h1>
+        <h2>{{user.email}}</h2>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+</ion-content>

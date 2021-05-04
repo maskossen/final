@@ -36,9 +36,9 @@ export class SignupPage implements OnInit {
           email: this.user.email,
           password: this.user.pass,
           username: this.user.username,
-          photoURL: this.user.photoURL,
-          notes: [],
-          friends: []
+          photoURL: this.user.photoURL
+          // notes: [],
+          // friends: []
         }).then(docRef => {
           console.log('Usertype written with ID: ', docRef.id);
         }).catch(error => {
