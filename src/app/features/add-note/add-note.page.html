@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Add Note</ion-title>
+    <ion-title>Add Sheet</ion-title>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
@@ -12,7 +12,7 @@
   <form (ngSubmit)="onSubmit()">
 
     <ion-item>
-      <ion-label>Note Title:</ion-label>
+      <ion-label>Cheat Sheet Title:</ion-label>
       <ion-input type="text" required [(ngModel)]="newNote.title" name="title"></ion-input>
     </ion-item>
 

@@ -1,5 +1,7 @@
 {
   "name": "CheatSheet",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
